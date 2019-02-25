@@ -1,0 +1,15 @@
+n = 9
+print("number diamond")
+for a in range(1, (n+1)//2 + 1):
+    for b in range((n+1)//2 - a):
+        print(" ", end = "")
+    for c in range((a*2)-1):
+        print("*", end = "")
+    print()
+
+for a in range((n+1)//2 + 1, n + 1):
+    for b in range(a - (n+1)//2):
+        print(" ", end = "")
+    for c in range((n+1 - a)*2 - 1):
+        print("*", end = "")
+    print()
