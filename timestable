@@ -1,0 +1,4 @@
+n = int(input("Input the number your times table will be in: "))
+
+for i in range(1,13):
+   print(n,'x',i,'=',n*i)
