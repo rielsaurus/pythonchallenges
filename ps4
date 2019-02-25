@@ -1,0 +1,7 @@
+import time
+timer = int(input("How many minutes of total play time?"))
+for i in range((timer)*60,0,-1):
+    print(i, 'seconds left')
+    time.sleep(1)
+    if i == ((timer)*60)/2:
+        print ('Switch PS4 now!')
