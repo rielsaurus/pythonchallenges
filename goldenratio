@@ -1,0 +1,3 @@
+length = float(input("What is the length of your painting in cm?"))
+height = length/1.618*1
+print("The ideal height is %dcm" % height)
