@@ -1,0 +1,6 @@
+import random
+number = random.sample(range(1, 100), 50)
+print(number)
+print((sum(number)/float(len(number))),"is the mean")
+print((max(number)),"is the maximum")
+print((min(number)),"is the minimum")
