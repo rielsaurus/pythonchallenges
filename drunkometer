@@ -1,0 +1,14 @@
+import random
+phrases = ["aaauhyyjd","eeeuuuhjy","tiidfg","aajyrf","zzjyfj"]
+choice = random.choice(phrases)
+print("Type",choice,)
+next = input("Type it here: ")
+if next == (choice):
+    print("You did it! Type it again. ")
+    again = input("Type it here: ")
+    if again == (choice):
+        print("You got the job!")
+    else:
+        print("Sorry, you're not fit for the job...")
+else:
+    print("Sorry, you're not fit for the job...")
