@@ -1,0 +1,5 @@
+age = int(input("How old are you? "))
+number = 225 - age
+mhr = 0.7*(number)
+print("Your maximum heart rate is 70%-75% of your theoretical maximum heart rate.\nThe formula is 70% * 225 -",age)
+print("Your maximum heart rate is",mhr,"BPM")
