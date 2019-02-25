@@ -1,0 +1,19 @@
+def generateNumber(num):
+    mylist = []
+    for i in range(num+1):
+         mylist.append(i)
+    return mylist
+
+
+x = generateNumber(10)
+print(x)
+
+number = int(12)
+urnumber = int(input("Guess my number "))
+if urnumber == number:
+    print("Correct!")
+else:
+    print("Wrong. My number was 12.")
+
+for i in range (14,0,-1):
+    print(i)
