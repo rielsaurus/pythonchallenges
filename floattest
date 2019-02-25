@@ -1,0 +1,14 @@
+while True:
+    print("This program tests if a value is a float.")
+    try:
+        n = int(input("Type in a number... "))
+
+        if n >= 50:
+            print("It's a number")
+
+        else:
+            print("It's a number")
+
+    except ValueError:
+        print("Not a number!")
+        break
