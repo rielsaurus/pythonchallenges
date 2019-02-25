@@ -1,0 +1,10 @@
+odd = int(input('Add the digits of the barcode in odd intervals excluding the check digit, and type the result '))
+even = int(input('Repeat above, but with the even intervals '))
+
+stepthree = (odd + even*3)/10
+remainder = round(stepthree % 2)
+value = 10 - remainder
+if remainder == 0:
+    print("Your ISBN code is correct!")
+else:
+    print(value,"is the check digit. Repeat but with your check digit included.")
