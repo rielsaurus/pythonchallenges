@@ -1,0 +1,18 @@
+def factorial(n):
+    print("factorial has been called with n = " + str(n))
+    if n == 1:
+        return 1
+    else:
+        res = n * factorial(n-1)
+        print("intermediate result for ", n, " * factorial(" ,n-1, "): ",res)
+        return res	
+
+print(factorial(5))
+
+def fibi(n):
+    old, new = 0, 1
+    if n == 0:
+        return 0
+    for i in range(n-1):
+        old, new = new, old + new
+    return new
