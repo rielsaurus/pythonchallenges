@@ -1,0 +1,75 @@
+rock = 0
+paper = 0
+scissors = 0
+rock2 = 0
+paper2 = 0
+scissors2 = 0
+turns = 0
+turns2 = 0
+list = [ ]
+list2 = [ ]
+while True:
+    choice = input("rock, paper, scissors? ")
+    if choice == "rock":
+        rock = rock + 1
+        turns = turns + 1
+        list.append("rock")
+    elif choice == "paper":
+        paper = paper + 1
+        turns = turns + 1
+        list.append("paper")
+    elif choice == "scissors":
+        scissors = scissors + 1
+        turns = turns + 1
+        list.append("scissors")
+    else:
+        print("Invalid value")
+    if turns == 5:
+        print("next player ")
+        break
+while True:
+    choice = input("rock, paper, scissors? ")
+    if choice == "rock":
+        rock2 = rock2 + 1
+        turns2 = turns2 + 1
+        list2.append("rock")
+    elif choice == "paper":
+        paper2 = paper2 + 1
+        turns2 = turns2 + 1
+        list2.append("paper")
+    elif choice == "scissors":
+        scissors2 = scissors2 + 1
+        turns2 = turns2 + 1
+        list2.append("scissors")
+    else:
+        print("Invalid value")
+    if turns2 == 5:
+        print("done! ")
+        break
+print(list)
+print(list2)
+
+round = 0
+
+win = 0
+win2 = 0
+
+while True:
+    if list[round] == "rock" and list2[round] == "rock" or list[round] == "paper" and list[round] == "paper" or list[round] == "scissors" and list2[round] == "scissors":
+        print("Round",round + 1,"- TIE")
+    if list[round] == "rock" and list2[round] == "paper" or list[round] == "paper" and list2[round] == "scissors" or list[round] == "scissors" and list2[round] == "rock":
+        print("Round",round + 1,"- P1 LOSE, P2 WIN")
+        win2 = win2 + 1
+    if list[round] == "rock" and list2[round] == "scissors" or list[round] == "paper" and list2[round] == "rock" or list[round] == "scissors" and list2[round] == "paper":
+        print("Round",round + 1,"- P1 WIN, P2 LOSE")
+        win = win + 1
+    round = round + 1
+    if round == 5:
+        break
+
+if win > win2:
+    print("Player 1 is the winner with",win,"rounds won!\nPlayer 2 lost with",win2,"rounds won!")
+if win2 > win:
+    print("Player 2 is the winner with",win2,"rounds won!\nPlayer 1 lost with",win,"rounds won!")
+if win == win2:
+    print("Both players won the same amount of rounds with",win,"wins each!")
