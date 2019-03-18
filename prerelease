@@ -1,0 +1,9 @@
+midday = 12 # midday temperatures range from 31 to 37°C
+midnight = 0 # midnight temperatures range from 29 to 25°C
+middaylist = [ ]
+midnightlist = [ ]
+middaytemp = 0
+for i in range(1,4): # repeats 3 times to get average
+    middaytemp = int(input("What is the temperature at midday?"))
+middaytemp += middaytemp
+print(middaytemp)
