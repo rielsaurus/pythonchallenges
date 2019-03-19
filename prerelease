@@ -1,9 +1,90 @@
+import random
+
 midday = 12 # midday temperatures range from 31 to 37°C
 midnight = 0 # midnight temperatures range from 29 to 25°C
 middaylist = [ ]
 midnightlist = [ ]
 middaytemp = 0
-for i in range(1,4): # repeats 3 times to get average
-    middaytemp = int(input("What is the temperature at midday?"))
-middaytemp += middaytemp
-print(middaytemp)
+midnighttemp = 0
+botdaylist = [31, 32, 33, 34, 35, 36, 37]
+botnightlist = [25, 26, 27, 28, 29]
+day = 0
+
+choice = input("Choose mode:\n[1] - Automatic (bot)\n[2] - Manual input\n")
+
+if choice == "1":
+    for i in range(1,31):
+        n = 0
+        middaytemp = 0
+        day = day + 1
+        while True:
+            bottemp1 = random.choice(botdaylist)
+            print("Midday temperature chosen - %d°C" % (bottemp1))
+            if bottemp1 < 31 or bottemp1 > 37: # validation
+                print("Invalid input, please try again. ")
+            else:
+                n = n + 1 # counts rounds
+                middaytemp += bottemp1
+                middaylist.append(middaytemp)
+            if n == 1: # no. of rounds
+                break
+        n = n-1
+        midnighttemp = 0
+        while True:
+            bottemp2 = random.choice(botnightlist)
+            print("Midnight temperature chosen - %d°C" % (bottemp2))
+            if bottemp2 < 25 or bottemp2 > 29: # validation
+                print("Invalid input, please try again. ")
+            else:
+                n = n + 1 # counts rounds
+                midnighttemp += bottemp2
+                midnightlist.append(midnighttemp)
+            if n == 1: # no. of rounds
+                break
+        print("Temperature at midday is %d°C on day" % (middaytemp),(day))
+        print(middaylist)
+        print("Temperature at midnight is %d°C on day"% (midnighttemp),(day))
+        print(midnightlist)
+
+if choice == "2":
+    for i in range(1,31):
+        n = 0
+        middaytemp = 0
+        while True:
+            temp1 = int(input("What is the temperature at midday? "))
+            if temp1 < 31 or temp1 > 37: # validation
+                print("Invalid input, please try again. ")
+            else:
+                n = n + 1 # counts rounds
+                middaytemp += temp1
+                middaylist.append(middaytemp)
+            if n == 1: # no. of rounds
+                break
+        print("Temperature at midday is %d°C" % (middaytemp))
+        print(middaylist)
+        n = n-1
+        midnighttemp = 0
+        while True:
+            temp2 = int(input("What is the temperature at midnight? "))
+            if temp2 < 25 or temp2 > 29: # validation
+                print("Invalid input, please try again. ")
+            else:
+                n = n + 1 # counts rounds
+                midnighttemp += temp2
+                midnightlist.append(midnighttemp)
+            if n == 1: # no. of rounds
+                break
+        print("Temperature at midnight is %d°C" % (midnighttemp))
+        print(midnightlist)
+
+averageday = float((sum(middaylist))/30)
+averagenight = float((sum(midnightlist))/30)
+print("Average temperature during midday of this month is %.2f°C" % (averageday))
+print("Average temperature during midnight of this month is %.2f°C" % (averagenight))
+
+highest = max(middaylist)
+highday = middaylist.index(highest)
+print("The earliest occurance of the day with the highest temperature of %.2f°C was Day" % (highest), ((highday)+1)) # works out the earliest day highest temp was reached
+lowest = min(midnightlist)
+lowday = midnightlist.index(lowest)
+print("The earliest occurance of the day with the lowest temperature of %.2f°C was Day" % (lowest), ((lowday)+1)) # works out the earliest day lowest temp was reached
