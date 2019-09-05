@@ -1,0 +1,23 @@
+# prisoner's dilemma
+import random
+options = ["silent", "confess"]
+
+while True:
+    print("You have been caught for a crime, if you confess and your partner stays quiet, you get 20 years in jail and your partner goes free and vice versa.\nIf you're both silent, you both only get 1 year.\nIf you both confess, you both get 5 years.")
+
+    a = input("Silent or confess?")
+    b = random.choice(options)
+
+    if a == "silent" and b == "silent":
+        print("You both go to jail for 1 year")
+    elif a == "silent" and b == "confess":
+        print("You're free, and your partner is in jail for 20 years")
+    elif a == "confess" and b == "silent":
+        print("You're in jail for 20 years, and your partner is free")
+    elif a == "confess" and b == "confess":
+        print("You both go to jail for 5 years")
+    replay = input("If you want to play again, please type yes/y")
+    if replay in ["Yes", "yes", "y", "Y"]:
+        print("Playing again!")
+    else:
+        break
