@@ -1,0 +1,99 @@
+import time
+import random
+point = 0
+choices = ["lookup", "range", "presence", "length"]
+choicez = ["double", "proofreading"]
+numberz = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+words = ["invader", "irk", "tallest", "earth", "florpus", "wormhole", "armada", "massive", "halo", "church", "gun", "freckles", "dinosaur", "baryonyx", "austroraptor", "cabinet", "arcade", "blender", "cat", "dog", "spin", "purple", "medic", "doctor", "bleach", "worm"]
+week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+print('\n\n  _   __        ___    _  __   ___        _   __\n | | / /       / _ |  / |/ /  / _ \      | | / /\n | |/ /       / __ | /    /  / // /      | |/ / \n |___/       /_/ |_|/_/|_/  /____/       |___/ \n\n       ')
+while True:
+    for char in "       validation & verification game":
+        time.sleep(0.05)
+        print(char, end = '')
+    start = input("\n\n            type start to begin!\n\n")
+    if start == "start":
+        break
+while True:
+    vorv = input("valid or verify?")
+    if vorv == "valid":
+        validchoice = (random.choice(choices))
+        print("validation chosen:", (validchoice))
+        if validchoice == "lookup":
+            while True:
+                weekchoice = input("enter a day of the week: ")
+                if weekchoice in week:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+                else:
+                    print("your choice is invalid! >_<'")
+        elif validchoice == "range":
+            while True:
+                numberchoice = int(input("enter a number from 69 to 420: "))
+                if numberchoice <= 420 and numberchoice >= 69:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+                else:
+                    print("your choice is invalid! >_<'")
+        elif validchoice == "presence":
+            while True:
+                blankchoice = input("enter anything! ")
+                if blankchoice == "" or blankchoice == " ":
+                    print("your choice is invalid!  >_<'")
+                else:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+        else:
+            while True:
+                length = input("enter a password that has six letters! ")
+                if len(length) == 6:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+                else:
+                    print("your choice is invalid!  >_<'")
+        replay = input("wanna play again? type yes!")
+        if replay == "yes":
+            print("playing again...\n")
+        else:
+            break
+    if vorv == "verify":
+        verifychoice = (random.choice(choicez))
+        print("verification chosen:", (verifychoice))
+        if verifychoice == "double":
+            first = input("enter any phrase: ")
+            while True:
+                second = input("enter the same phrase: ")
+                if second == first:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+                else:
+                    print("your choice is invalid! >_<'")
+        else:
+            firstword = (random.choice(words))
+            secondword = (random.choice(words))
+            print("the original word is ",(firstword))
+            print("the next word is ",(secondword))
+            while True:
+                proof = input("is the original word and next word the same? type yes/no ")
+                if proof == "yes" and firstword == secondword or proof == "no" and firstword != secondword:
+                    print("your choice is valid! ^u^")
+                    point = point + 1
+                    print("current points: ",point)
+                    break
+                else:
+                    print("your choice is invalid!  >_<'")
+        replay = input("wanna play again? type yes!")
+        if replay == "yes":
+            print("playing again...\n")
+        else:
+            break
