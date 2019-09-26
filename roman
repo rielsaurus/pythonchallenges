@@ -1,0 +1,43 @@
+n = 1
+for i in range (1,101):
+    print(n, end = ' ')
+    if n / 10 >= 1 and n / 10 < 2:
+        print("X", end = '')
+    if n / 10 >= 2 and n / 10 < 3:
+        print("XX", end = '')
+    if n / 10 >= 3 and n / 10 < 4:
+        print("XXX", end = '')
+    if n / 10 >= 4 and n / 10 < 5:
+        print("XL", end = '')
+    if n / 10 >= 5 and n / 10 < 6:
+        print("L", end = '')
+    if n / 10 >= 6 and n / 10 < 7:
+        print("LX", end = '')
+    if n / 10 >= 7 and n / 10 < 8:
+        print("LXX", end = '')
+    if n / 10 >= 8 and n / 10 < 9:
+        print("LXXX", end = '')
+    if n / 10 >= 9 and n / 10 < 10:
+        print("XC", end = '')
+    if n / 10 == 10:
+        print("C", end = '')
+    if n % 10 == 9:
+        print("IX", end = '')
+    if n % 10 == 8:
+        print("VIII", end = '')
+    if n % 10 == 7:
+        print("VII", end = '')
+    if n % 10 == 6:
+        print("VI", end = '')
+    if n % 10 == 5:
+        print("V", end = '')
+    if n % 10 == 4:
+        print("IV", end = '')
+    if n % 10 == 3:
+        print("III", end = '')
+    if n % 10 == 2:
+        print("II", end = '')
+    if n % 10 == 1:
+        print("I", end = '')
+    n = n+1
+    print(" ")
